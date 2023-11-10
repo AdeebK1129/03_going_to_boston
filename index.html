@@ -4,17 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Going to Boston</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <h1>Going to Boston</h1>
     <h2>How to Play</h2>
     <p>The goal of Going to Boston is to win rounds by rolling the highest total dice amount. To start, mutually agree on how many rounds you’d like to play (this number should be odd) and select a random player to toss all three dice. The highest number rolled will be kept. The player will then roll the remaining two dice and again hold onto the highest number. Roll the final die and add that number to your overall score for that turn. These steps will be repeated by each player around the table. Once everyone has rolled, the player with the highest score wins the round. Continue this until the end of the final round and add up your points. The player with the most will walk away victorious!</p><br>
 
-    <form id = "myForm">
-        <label for="rounds">Rounds (odd numbers only):</label><br>
-        <input type="number" id="rounds" name="rounds" min="1" step="2">
-        <button type="submit">Submit</button>
-    </form>
+    <label for="rounds">Rounds (odd numbers only):</label><br>
+    <input type="number" id="rounds" name="rounds" min="1" step="2">
+    <button id="submit">Submit</button>
+
+<div class="gameInfo hidden">
+    <p id="p1score">Player 1 Score:</p><br>
+    <p id="p1wins">Player 1 Rounds Won:</p><br>
+    <p id="p2score">Player 2 Score:</p><br>
+    <p id="p2wins">Player 2 Rounds Won:</p><br>
+</div>
+
+
 
     
 <script src="js/script.js"></script>
