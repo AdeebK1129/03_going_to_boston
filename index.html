@@ -11,16 +11,34 @@
     <h2>How to Play</h2>
     <p>The goal of Going to Boston is to win rounds by rolling the highest total dice amount. To start, mutually agree on how many rounds you’d like to play (this number should be odd) and select a random player to toss all three dice. The highest number rolled will be kept. The player will then roll the remaining two dice and again hold onto the highest number. Roll the final die and add that number to your overall score for that turn. These steps will be repeated by each player around the table. Once everyone has rolled, the player with the highest score wins the round. Continue this until the end of the final round and add up your points. The player with the most will walk away victorious!</p><br>
 
+<div class = "starting">
     <label for="rounds">Rounds (odd numbers only):</label><br>
     <input type="number" id="rounds" name="rounds" min="1" step="2">
-    <button id="submit">Submit</button>
+    <button id="submit">Start Game</button>
+</div>
+
+<div class = "turns hidden">
+    <button id="turnDecider">Roll for Turn</button>
+    <p id="p1roll">Player 1 Roll: </p>
+    <p id="p2roll">Player 2 Roll: </p>
+    <p id="prompt"></p>
+</div>
+<button class="hidden" id="continue">Continue</button>
 
 <div class="gameInfo hidden">
-    <p id="p1score">Player 1 Score:</p><br>
-    <p id="p1wins">Player 1 Rounds Won:</p><br>
-    <p id="p2score">Player 2 Score:</p><br>
-    <p id="p2wins">Player 2 Rounds Won:</p><br>
+    <p id="gameWinner"></p>
+    <p id="roundWinner"></p>
+    <p id="starter"></p>
+    <button id="roll">Roll</button>
+    <p id="dice"></p>
+    <p id="roundNum">Round 1 of </p>
+    <p id="p1score">Player 1 Score:</p>
+    <p id="p1wins">Player 1 Rounds Won:</p>
+    <p id="p2score">Player 2 Score:</p>
+    <p id="p2wins">Player 2 Rounds Won:</p>
 </div>
+
+<br><br><br><button id="restart">Restart</button>
 
 
 
