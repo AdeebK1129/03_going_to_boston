@@ -64,6 +64,9 @@ function gameBegin() {
     gameInfoClassList.remove("hidden");
     continueClassList.add("hidden");
     document.getElementById("starter").textContent = `Player ${currentPlayer} Rolls`;
+    if(rollClassList.contains("hidden")){
+        rollClassList.remove("hidden")
+    }
 }
 
 
@@ -164,19 +167,18 @@ function restart(){
     if (continueClassList.contains("hidden") == false) {
         continueClassList.add("hidden"); 
     } 
-    if (rollButton.classList.contains("hidden") == false) {
-        rollButton.classList.remove("hidden"); 
-    }   
     document.getElementById("prompt").innerHTML = "";
     player1FirstRoll.textContent = "Player 1 Roll: ";
     player2FirstRoll.textContent = "Player 2 Roll: ";
     document.getElementById("gameWinner").innerHTML = "";
     document.getElementById("roundWinner").innerHTML = "";
+    document.getElementById("dice").textContent = "";
     roundDisplay.innerHTML = "Round 1 of ";
     player1Score.innerHTML = "Player 1 Score:";
     player1Wins.innerHTML = "Player 1 Rounds Won:";
     player2Score.innerHTML = "Player 2 Score:";
     player2Wins.innerHTML = "Player 2 Rounds Won:";
+
 }
 
 document.getElementById("continue").addEventListener("click", gameBegin);
