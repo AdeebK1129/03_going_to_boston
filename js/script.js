@@ -64,15 +64,9 @@ function gameBegin() {
     gameInfoClassList.remove("hidden");
     continueClassList.add("hidden");
     document.getElementById("starter").textContent = `Player ${currentPlayer} Rolls`;
-    if(rollClassList.contains("hidden")){
-        rollClassList.remove("hidden")
-    }
 }
 
-
-
 function turn() {
-    document.getElementById("roundWinner").textContent = "";
     turnCount += 1;
     totalTurnCount += 1; 
     let rolls = [];
@@ -114,12 +108,18 @@ function turn() {
             p2TotalScore = 0;
             document.getElementById("roundWinner").textContent = `Player 1 Wins Round ${curRound}`;
             document.getElementById("p1wins").textContent = `Player 1 Rounds Won: ${p1RoundWins}`;
-        } else {
+        } 
+        else if(p2TotalScore > p1TotalScore) {
             p2RoundWins += 1;
             p1TotalScore = 0;
             p2TotalScore = 0;
             document.getElementById("roundWinner").textContent = `Player 2 Wins Round ${curRound}`;
             document.getElementById("p2wins").textContent = `Player 2 Rounds Won: ${p2RoundWins}`;
+        }
+        else{
+            p1TotalScore = 0;
+            p2TotalScore = 0;
+            document.getElementById("roundWinner").textContent = `No Player Wins Round ${curRound}`;
         }
         totalTurnCount = 0;
 
@@ -146,39 +146,7 @@ function determineWinner(){
 }
 
 function restart(){
-    currentPlayer = 0;
-    rollNum = 0;
-    curRound = 1;
-    p1TotalScore = 0;
-    p2TotalScore = 0;
-    p1RoundWins = 0;
-    p2RoundWins = 0;
-    turnCount = 0;
-    totalTurnCount = 0;
-    if (gameInfoClassList.contains("hidden") == false) {
-        gameInfoClassList.add("hidden"); 
-    }
-    if (roundsClassList.contains("hidden")) {
-        roundsClassList.remove("hidden"); 
-    }
-    if (turnsClassList.contains("hidden") == false) {
-        turnsClassList.add("hidden"); 
-    }
-    if (continueClassList.contains("hidden") == false) {
-        continueClassList.add("hidden"); 
-    } 
-    document.getElementById("prompt").innerHTML = "";
-    player1FirstRoll.textContent = "Player 1 Roll: ";
-    player2FirstRoll.textContent = "Player 2 Roll: ";
-    document.getElementById("gameWinner").innerHTML = "";
-    document.getElementById("roundWinner").innerHTML = "";
-    document.getElementById("dice").textContent = "";
-    roundDisplay.innerHTML = "Round 1 of ";
-    player1Score.innerHTML = "Player 1 Score:";
-    player1Wins.innerHTML = "Player 1 Rounds Won:";
-    player2Score.innerHTML = "Player 2 Score:";
-    player2Wins.innerHTML = "Player 2 Rounds Won:";
-
+    window.location.reload();
 }
 
 document.getElementById("continue").addEventListener("click", gameBegin);
